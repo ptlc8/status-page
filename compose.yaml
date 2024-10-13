@@ -1,0 +1,10 @@
+services:
+  server:
+    build: .
+    ports:
+      - 5747:5747
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      - RUST_LOG=info
+    restart: always

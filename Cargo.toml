@@ -1,0 +1,13 @@
+[package]
+name = "status-page"
+description = "A status page for docker compose"
+version = "0.1.0"
+authors = ["Ambi"]
+edition = "2021"
+
+[dependencies]
+actix-web = "4.9.0"
+env_logger = "0.11.5"
+log = "0.4.22"
+serde = "1.0.210"
+shiplift = "0.7.0"

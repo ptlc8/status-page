@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html data-app="{}">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Status page</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://cdn.jsdelivr.net/gh/ptlc8/anchovy@0.2.0/anchovy.js"></script>
+        <script src="script.js"></script>
+        <script>
+            app.data.projects = [];
+            (async () => {
+                app.data.projects = await Api.status.getAll();
+            })();
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <h1>Status page</h1>
+        </header>
+        <main data-foreach-project="projects" data-update="projects">
+            <section>
+                <div data-on-click="project.expanded = !project.expanded" class="head">
+                    <span data-bind="project.expanded ? '▾' : '▸'" data-update="project.expanded"></span>
+                    <h2 data-bind="project.name"></h2>
+                    <span data-if="project.up" class="up">UP</span>
+                    <span data-else class="down">DOWN</span>
+                </div>
+                <div data-if="project.expanded" data-foreach-service="project.services" data-update="project.expanded" class="body">
+                    <article>
+                        <h3 data-bind="service.name"></h3>
+                        <span data-if="service.up" class="up">UP</span>
+                        <span data-else class="down">DOWN</span>
+                        <span data-bind="service.status"></span>
+                    </article>
+                </div>
+            </section>
+        </main>
+    </body>
+
+</html>

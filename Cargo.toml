@@ -6,6 +6,7 @@ authors = ["Ambi"]
 edition = "2021"
 
 [dependencies]
+actix-files = "0.6.6"
 actix-web = "4.9.0"
 env_logger = "0.11.5"
 log = "0.4.22"

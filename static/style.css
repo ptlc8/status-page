@@ -1,0 +1,76 @@
+:root {
+    --primary-color: #71af47;
+    --secondary-color: #f0f0f0;
+    --background-color: #ffffff;
+    --good-color: #71af47;
+    --bad-color: #ff0000;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 0 1em;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+    padding: .5em;
+    gap: 1em;
+    background-color: var(--secondary-color);
+    border-radius: .5em;
+}
+
+section .head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+    padding-left: 1em;
+    cursor: pointer;
+}
+
+section .head h2 {
+    margin: 0;
+    flex-grow: 1;
+}
+
+section .body {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+article {
+    padding: .5em;
+    background-color: var(--background-color);
+    border-radius: .5em;
+    color: var(--good-color);
+}
+
+.up,
+.down {
+    display: inline-block;
+    min-width: 4em;
+    text-align: center;
+    padding: .5em;
+    color: var(--secondary-color);
+    border-radius: .5em;
+    font-weight: bold;
+}
+
+.up {
+    background-color: var(--good-color);
+}
+
+.down {
+    background-color: var(--bad-color);
+}

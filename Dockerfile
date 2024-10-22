@@ -22,6 +22,9 @@ RUN cargo build --release
 FROM gcr.io/distroless/cc AS runtime
 WORKDIR /app
 
+# Copy the static files
+COPY static ./static
+
 # Copy the built binary from the builder container
 COPY --from=builder /app/target/release/status-page ./
 

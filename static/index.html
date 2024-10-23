@@ -34,9 +34,10 @@
                             <span data-bind-class="service.state + '-indicator'"></span>
                         </div>
                         <div data-foreach-instance="service.instances" class="body">
-                            <div>
+                            <div class="row">
                                 <span data-bind-class="instance.state + '-indicator'"></span>
-                                <span data-bind="instance.status"></span>
+                                <span data-if="service.instances.length > 1" data-bind="instance.number" class="number"></span>
+                                <span data-bind="instance.status" data-bind-class="instance.state"></span>
                             </div>
                         </div>
                     </article>

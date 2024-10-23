@@ -4,7 +4,6 @@ use serde::Serialize;
 #[derive(Serialize)]
 pub struct InstanceInfo {
     pub number: u32,
-    pub container_name: String,
     pub status: String,
     pub state: String,
 }

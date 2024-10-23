@@ -36,7 +36,6 @@ pub async fn get_projects_status() -> Vec<ProjectInfo> {
 
             let instance_info = InstanceInfo {
                 number,
-                container_name: container.names[0].clone(),
                 status: container.status.clone(),
                 state,
             };

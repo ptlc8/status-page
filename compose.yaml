@@ -8,3 +8,5 @@ services:
     environment:
       - RUST_LOG=info
     restart: always
+    labels:
+      - webproxy.subdomain=status

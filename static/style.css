@@ -24,14 +24,50 @@ header {
     padding: 0 1em;
 }
 
+nav {
+    display: flex;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+input, select {
+    margin: 1em;
+    padding: 1em;
+    border-radius: .5em;
+    border: solid 1px;
+    background-color: var(--background-color);
+}
+
+.search {
+    flex: 4;
+}
+
+.sort {
+    flex: 1;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
 section {
     display: flex;
     flex-direction: column;
-    margin: 1em;
+    margin: .5em;
     padding: .5em;
     gap: .5em;
     background-color: var(--secondary-color);
     border-radius: .5em;
+}
+
+.slinky-enter-active, .slinky-leave-active {
+    transition: font-size .5s;
+}
+.slinky-enter, .slinky-leave-to {
+    font-size: 0;
 }
 
 .head {

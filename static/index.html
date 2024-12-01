@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-app="{}">
+<html data-app="{ projects: [], search: '', sort: 'name' }">
 
     <head>
         <meta charset="UTF-8" />
@@ -7,13 +7,17 @@
         <title>Status page</title>
         <link rel="icon" href="icon.webp" />
         <link rel="stylesheet" href="style.css" />
-        <script src="https://cdn.jsdelivr.net/gh/ptlc8/anchovy@0.2.0/anchovy.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/ptlc8/anchovy@0.2.2/src/anchovy.js"></script>
         <script src="script.js"></script>
         <script>
-            app.data.projects = [];
             (async () => {
                 app.data.projects = await Api.status.getAll();
             })();
+            function getFilteredProjects() {
+                return app.data.projects
+                    .filter(project => project.name.match(new RegExp(app.data.search, 'i')))
+                    .sort((a, b) => a[app.data.sort] > b[app.data.sort] ? 1 : -1);
+            }
         </script>
     </head>
 
@@ -21,7 +25,14 @@
         <header>
             <h1>Status page</h1>
         </header>
-        <main data-foreach-project="projects" data-update="projects">
+        <nav>
+            <input type="text" data-model="search" class="search" placeholder="🔍 Search..." />
+            <select data-model="sort" class="sort">
+                <option value="name">🔤 Sort by name</option>
+                <option value="state">🚦 Sort by state</option>
+            </select>
+        </nav>
+        <main data-foreach-project="getFilteredProjects()" data-transition="slinky" data-update="projects|search|sort">
             <section>
                 <div data-on-click="project.expanded = !project.expanded" class="head">
                     <span data-bind="project.expanded ? '▾' : '▸'" data-update="project.expanded"></span>

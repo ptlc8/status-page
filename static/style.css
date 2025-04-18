@@ -28,12 +28,13 @@ nav {
     display: flex;
     max-width: 1280px;
     margin: 0 auto;
+    padding: 1em .5em;
+    gap: 1em;
 }
 
 input, select {
-    margin: 1em;
     padding: 1em;
-    border-radius: .5em;
+    border-radius: .5rem;
     border: solid 1px;
     background-color: var(--background-color);
 }
@@ -60,7 +61,7 @@ section {
     padding: .5em;
     gap: .5em;
     background-color: var(--secondary-color);
-    border-radius: .5em;
+    border-radius: 1rem;
 }
 
 .slinky-enter-active, .slinky-leave-active {
@@ -77,6 +78,14 @@ section {
     gap: 1em;
     padding-left: 1em;
     cursor: pointer;
+}
+
+.expand-indicator {
+    padding: 0;
+    border: 0;
+    font-size: 1.5em;
+    cursor: inherit;
+    border-radius: .5rem;
 }
 
 h2,
@@ -97,7 +106,7 @@ article {
     padding: .5em;
     gap: .5em;
     background-color: var(--background-color);
-    border-radius: .5em;
+    border-radius: .5rem;
 }
 
 .row {
@@ -116,7 +125,7 @@ article {
     padding: .5em;
     color: var(--secondary-color);
     background-image: var(--hot-gradient);
-    border-radius: .5em;
+    border-radius: .5rem;
     font-weight: bold;
 }
 
@@ -154,7 +163,7 @@ article {
     text-align: center;
     color: var(--secondary-color);
     background: var(--info-color);
-    border-radius: 0.25em;
+    border-radius: 0.25rem;
 }
 
 .number::before {

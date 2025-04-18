@@ -38,7 +38,7 @@
         <main data-else data-foreach-project="getFilteredProjects()" data-transition="slinky" data-update="projects|search|sort">
             <section>
                 <div data-on-click="project.expanded = !project.expanded" class="head">
-                    <span data-bind="project.expanded ? '▾' : '▸'" data-update="project.expanded"></span>
+                    <button class="expand-indicator" data-bind="project.expanded ? '▾' : '▸'" data-update="project.expanded"></button>
                     <h2 data-bind="project.name"></h2>
                     <span data-bind-class="project.state + '-indicator'"></span>
                 </div>

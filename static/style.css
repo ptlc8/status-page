@@ -35,7 +35,7 @@ nav {
 input, select {
     padding: 1em;
     border-radius: .5rem;
-    border: solid 1px;
+    border: 2px solid var(--secondary-color);
     background-color: var(--background-color);
 }
 
@@ -61,7 +61,7 @@ section {
     padding: .5em;
     gap: .5em;
     background-color: var(--secondary-color);
-    border-radius: 1rem;
+    border-radius: 1.5rem;
 }
 
 .slinky-enter-active, .slinky-leave-active {
@@ -90,6 +90,10 @@ section {
     background: none;
 }
 
+section > .head .up-indicator {
+  margin-right: .5rem;
+}
+
 h2,
 h3 {
     margin: 0;
@@ -108,7 +112,7 @@ article {
     padding: .5em;
     gap: .5em;
     background-color: var(--background-color);
-    border-radius: .5rem;
+    border-radius: 1rem;
 }
 
 .row {

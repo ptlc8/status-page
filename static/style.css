@@ -90,7 +90,9 @@ section {
     background: none;
 }
 
-section > .head .up-indicator {
+section > .head .up-indicator,
+section > .head .down-indicator,
+section > .head .partial-indicator {
   margin-right: .5rem;
 }
 

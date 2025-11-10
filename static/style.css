@@ -33,6 +33,7 @@ nav {
 }
 
 input, select {
+    appearance: none;
     padding: 1em;
     border-radius: .5rem;
     border: 2px solid var(--secondary-color);
